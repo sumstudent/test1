@@ -1,0 +1,56 @@
+.head {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.msge {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btnyes-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.btnyes {
+    position: absolute;
+    bottom: 70%;
+    left: 45%;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.btnyes:hover {
+    background-color: rgb(150, 180, 100);
+    box-shadow: 0 12px 30px rgba(187, 193, 151, 0.6);
+}
+
+.btnno-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.btnno {
+    position: absolute;
+    bottom: 70%;
+    left: 52%;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.btnno:hover {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 12px 30px rgba(187, 193, 151, 0.6);
+}
+/* Styles for devices up to 600px wide (phones) */
+@media only screen and (max-width: 600px) {
+body {
+font-size: 14px;
+background-color: #f5f5f5;
+}
+.menu {
+display: none;
+}
+}
