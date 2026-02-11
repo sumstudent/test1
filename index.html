@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Proposal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffb6c1, #ffc0cb);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      color: red;
+      font-size: 8vw; /* scales with screen width */
+      margin-bottom: 5vh;
+    }
+    .buttons {
+      display: flex;
+      gap: 5vw;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      padding: 3vh 6vw;
+      font-size: 5vw;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #yes {
+      background: red;
+      color: white;
+    }
+    #no {
+      background: white;
+      color: red;
+      position: relative;
+    }
+    .balloon {
+      position: absolute;
+      width: 10vw;
+      height: 10vw;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      transform: rotate(-45deg);
+      animation: float 12s linear infinite;
+    }
+    .balloon::before {
+      content: "";
+      position: absolute;
+      width: 10vw;
+      height: 10vw;
+      background: red;
+      border-radius: 50%;
+      top: -5vw;
+      left: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(-45deg); }
+      100% { transform: translateY(-20vh) rotate(-45deg); }
+    }
+    #message {
+      margin-top: 5vh;
+      font-size: 6vw;
+      color: darkred;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine?</h1>
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+  <div id="message">I knew you would say YES! ❤️<br>ILOVEYOUSOMUCHHHH</div>
+
+  <!-- Balloons -->
+  <div class="balloon" style="left:10%; animation-delay:0s;"></div>
+  <div class="balloon" style="left:40%; animation-delay:3s;"></div>
+  <div class="balloon" style="left:70%; animation-delay:6s;"></div>
+
+  <script>
+    const yesBtn = document.getElementById('yes');
+    const noBtn = document.getElementById('no');
+    const message = document.getElementById('message');
+
+    yesBtn.addEventListener('click', () => {
+      message.style.display = 'block';
+      document.querySelector('.buttons').style.display = 'none';
+    });
+
+    // Make "No" button dodge taps
+    noBtn.addEventListener('touchstart', () => {
+      noBtn.style.transform = `translate(${Math.random()*100-50}px, ${Math.random()*100-50}px)`;
+    });
+    noBtn.addEventListener('mouseover', () => {
+      noBtn.style.transform = `translate(${Math.random()*100-50}px, ${Math.random()*100-50}px)`;
+    });
+  </script>
+</body>
+</html>
